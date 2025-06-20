@@ -127,7 +127,7 @@ class Tokenizer:
             ]
             
             if any(conditions):
-                words.append(subword.strip())
+                words.append(subword)
                 word_tokens.append(subword_tokens)
             else:
                 words[-1] = words[-1] + subword
