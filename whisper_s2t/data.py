@@ -66,6 +66,9 @@ class BasicSegmenter:
         for i in range(0, int(audio_duration), int(self.max_seg_len)):
             start_ends.append([i, i + self.max_seg_len])
         
+        if len(start_ends) == 0:
+            start_ends.append([0, 0])
+        
         start_ends[-1][1] = min(audio_duration, start_ends[-1][1]) # fix edge
         
         return start_ends, audio_signal
